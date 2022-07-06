@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="/css/article/list.css" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<link rel="stylesheet" href="/css/article/list.css" />
+<script type="text/javascript" src="/js/article.js"></script>
 <section class="-info">
 	<table>
 		<thead>
@@ -17,7 +18,7 @@
 			<c:forEach items="${list}" var="article" begin="1" end="10">
 				<tr>
 					<td>${article.id}</td>
-					<td><a class="detail-link" href="${article.id}">${article.title}</a></td>
+					<td><a class="deta-links" href="${article.id}">${article.title}</a></td>
 					<td>${article.etc.writer}</td>
 					<td><fmt:formatDate value="${article.regDate}" pattern="yyyy-MM-dd" /></td>
 					<td>${article.hit}</td>
@@ -29,4 +30,6 @@
 		<button class="btn first-list-btn">목록</button>
 		<button class="btn write-btn">글쓰기</button>
 	</div>
+	<form action="/article/list" method="get" id="pagemove-form">
+	</form>
 </section>
