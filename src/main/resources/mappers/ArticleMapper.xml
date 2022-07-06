@@ -7,6 +7,15 @@
 		from article as A
 		inner join user as U
 		on A.userId = U.id
+		order by id DESC
+	</select>
+	
+	<select id="getArticle" resultMap="article" parameterType="int">
+		select A.* , U.nickname as etc_writer
+		from article as A
+		inner join user as U
+		on A.userId = U.id 
+		where A.id = #{id}
 	</select>
 	<resultMap type="Article" id="article">
 		<id property="id" column="id" />

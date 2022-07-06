@@ -10,4 +10,8 @@ public interface ArticleMapper {
 	// 게시글 목록
 	List<Article> getList();
 
+	Article getArticle(int id);
+
+	
+
 }

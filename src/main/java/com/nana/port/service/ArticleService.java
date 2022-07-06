@@ -17,4 +17,8 @@ public class ArticleService {
 		return articleMapper.getList();
 	}
 
+	public Article getArticle(int id) {
+		return articleMapper.getArticle(id);
+	}
+
 }
