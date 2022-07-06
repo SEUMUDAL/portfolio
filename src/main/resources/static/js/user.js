@@ -21,9 +21,10 @@ window.addEventListener("load", () => {
 		})
 			.then(resp => resp.json())
 			.then(resp => {
-				if (resp.status === "OK")
+				if (resp.status === "OK") {
 					alert("회원가입이 완료되었습니다.");
-				else
+					location.href = "/user/login";
+				} else
 					alert("회원가입에 실패하셨습니다.");
 			})
 			.catch(error => console.error(error));
