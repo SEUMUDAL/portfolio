@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* content */
+.content {
+	background: #F1F1F5;
+	padding: 40px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.content-wrap {
+	width: 1240px;
+	display: flex;
+	justify-content: center;
+}
+
+#main {
+	min-height: 70vh;
+	display: flex;
+	justify-content: center;
+}

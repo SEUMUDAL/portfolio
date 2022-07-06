@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* header */
+.line {
+	border-bottom: 1px solid #8D8D8D;
+}
+
+.header-wrap {
+	width: 1270px;
+	margin: 0 auto;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-inline-flex {
+	display: inline-flex;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.justify-content-start {
+	justify-content: start;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.logo {
+	font-size: 26px;
+}
+
+.login-box li a {
+	display: block;
+	padding: 22px 16px;
+	color: #8D8D8D;
+	transition: color .6s;
+	font-size: 15px;
+}
+
+.login-box li a:hover, .drop-down li a:hover {
+	color: black;
+}
+
+.login-box .user {
+	cursor: pointer;
+	position: relative;
+}
+
+.drop-down {
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	left: 0%;
+	background: white;
+	display: none;
+	border: 1px solid red;
+	display: none;
+}
+
+.drop-down li a {
+	display: block;
+	text-align: center;
+	transition: color .6s;
+	font-size: 15px;
+}
+
+.login-box .user:hover>.drop-down {
+	display: block;
+}
+
+.category {
+	margin-left: 200px;
+}
+
+.category li a {
+	font-size: 15px;
+	display: block;
+	padding: 10px 17px;
+	color: #8D8D8D;
+	transition: color .6s;
+}
+
+.category li a:hover {
+	color: black;
+}

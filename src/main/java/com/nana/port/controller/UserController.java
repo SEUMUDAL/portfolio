@@ -10,11 +10,11 @@ public class UserController {
 	// 회원가입 홈페이지
 	@GetMapping("/signup")
 	public String signUp() {
-		return "user/signup";
+		return "user.signup";
 		
 	}
 	@GetMapping("/login")
 	public String loginForm() {
-		return "user/login";
+		return "user.login";
 	}
 }
