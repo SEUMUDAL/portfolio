@@ -5,4 +5,8 @@
 		insert into user (username,password,email,nickname,role)
 		values (#{username},#{password},#{email},#{nickname},#{role})
 	</insert>
+	<select id="findByUsername" resultType="User"  parameterType="string">
+		select * from user
+		where username = #{username}
+	</select> 
 </mapper>

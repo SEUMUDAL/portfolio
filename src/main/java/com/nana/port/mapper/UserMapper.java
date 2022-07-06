@@ -8,4 +8,6 @@ public interface UserMapper {
 	// 회원가입
 	int signup(User user);
 
+	User findByUsername(String username);
+
 }
