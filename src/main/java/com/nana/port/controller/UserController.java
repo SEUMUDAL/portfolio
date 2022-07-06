@@ -13,5 +13,8 @@ public class UserController {
 		return "user/signup";
 		
 	}
-	
+	@GetMapping("/login")
+	public String loginForm() {
+		return "user/login";
+	}
 }

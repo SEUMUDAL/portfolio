@@ -13,7 +13,7 @@ import com.nana.port.service.UserService;
 
 @RestController
 @RequestMapping("/user")
-public class ApiUserController {
+public class UserApiController {
 	@Autowired
 	UserService userService;
 	@PostMapping("/signup")
