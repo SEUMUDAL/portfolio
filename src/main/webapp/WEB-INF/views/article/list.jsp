@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${list}" var="article" begin="1" end="10">
+			<c:forEach items="${list}" var="article" begin="0" end="10">
 				<tr>
 					<td>${article.id}</td>
 					<td><a class="deta-links" href="${article.id}">${article.title}</a></td>

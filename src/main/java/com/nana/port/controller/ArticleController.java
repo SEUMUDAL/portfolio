@@ -17,7 +17,7 @@ import com.nana.port.service.ArticleService;
 public class ArticleController {
 	
 	@Autowired
-	ArticleService articleService;
+	private ArticleService articleService;
 	/* 게시글 목록 */	
 	@GetMapping("/list")
 	public ModelAndView List() {
@@ -34,4 +34,10 @@ public class ArticleController {
 		mv.addObject("article", articleService.getArticle(id));
 		return mv;
 	}
+	/* 게시글 작성폼 */
+	@GetMapping("/write")
+	public String writeForm() {
+		return "article.write";
+	}
+	
 }

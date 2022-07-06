@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.-info {
+	width: 1062px;
+	background: #ffffff;
+	margin: 0 auto;
+	border: 1px solid silver;
+	border-radius: 27px;
+	padding: 67px 112px;
+	box-sizing: border-box;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.write-box {
+	padding: 12px 0;
+}
+
+.write-box:first-of-type {
+	border-top: 2px solid silver;
+}
+
+.write-box input {
+	width: 100%;
+	border: none;
+	outline: none;
+	margin-top: 9px;
+}
+
+.btn {
+	color: #ffffff;
+	background: #442ED4;
+	padding: 10px 0;
+	border-radius: 9px;
+	border: none;
+	width: 100px;
+	margin: 0 2px;
+	cursor: pointer;
+}
