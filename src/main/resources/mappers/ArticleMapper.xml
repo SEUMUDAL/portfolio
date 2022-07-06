@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nana.port.mapper.ArticleMapper">
+	<select id="getList" resultMap="article">
+		select A.*, U.nickname as
+		etc_writer
+		from article as A
+		inner join user as U
+		on A.userId = U.id
+	</select>
+	<resultMap type="Article" id="article">
+		<id property="id" column="id" />
+		<id property="title" column="title" />
+		<id property="content" column="content" />
+		<id property="hit" column="hit" />
+		<id property="regDate" column="regDate" />
+		<id property="userId" column="userId" />
+		<association property="etc" javaType="map">
+			<id property="writer" column="etc_writer" />
+		</association>
+	</resultMap>
+</mapper>
