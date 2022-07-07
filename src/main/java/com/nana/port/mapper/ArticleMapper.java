@@ -15,6 +15,9 @@ public interface ArticleMapper {
 
 	// 게시글 작성하기
 	int write(Article article);
+	
+	// 게시글 수정하기
+	int modify(Article reqArticle);
 
 	
 

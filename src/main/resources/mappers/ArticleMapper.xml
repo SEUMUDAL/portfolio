@@ -26,6 +26,14 @@
 		values
 		(#{title},#{content},#{userId})
 	</insert>
+	
+	<update id="modify" parameterType="Article">
+		update article
+		set title = #{title},
+		content = #{content}
+		where id = #{id}
+	</update>
+	
 	<resultMap type="Article" id="article">
 		<id property="id" column="id" />
 		<id property="title" column="title" />

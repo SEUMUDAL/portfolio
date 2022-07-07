@@ -26,5 +26,12 @@ public class ArticleService {
 		article.setUserId(user.getId());
 		return articleMapper.write(article);
 	}
-
+	// 게시글 수정하기
+	public int modify(Article reqArticle) {		
+		Article article = articleMapper.getArticle(reqArticle.getId());
+		if(article == null) {
+			return -1;
+		}
+		return articleMapper.modify(reqArticle); 
+	}
 }
