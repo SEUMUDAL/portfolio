@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nana.port.dto.Criteria;
+import com.nana.port.dto.Pages;
 import com.nana.port.payload.Article;
 import com.nana.port.service.ArticleService;
 
@@ -22,10 +24,12 @@ public class ArticleController {
 	private ArticleService articleService;
 	/* 게시글 목록 */	
 	@GetMapping("/list")
-	public ModelAndView List() {
+	public ModelAndView List(Criteria cri) {
 		ModelAndView mv = new ModelAndView("article.list");
-		List<Article> list = articleService.getList();
+		List<Article> list = articleService.getList(cri);
+		int total = articleService.getTotal(cri);
 		mv.addObject("list", list);
+		mv.addObject("page", new Pages(cri, total));
 		return mv;
 	}
 	

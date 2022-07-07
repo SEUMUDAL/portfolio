@@ -2,8 +2,20 @@
  * 목록 페이지
  */
 window.addEventListener("load", () => {
-	// list에서 detail로 이동
 	const pageMoveForm = document.getElementById("pagemove-form");
+	const pageBtns = document.querySelectorAll(".page-btn>a");
+	const pageNum = document.querySelector("input[name='pageNum']");
+
+
+	for (let link of pageBtns) {
+		link.addEventListener("click", (e) => {
+			e.preventDefault();
+			pageNum.setAttribute("value", link.getAttribute("href")); 
+			pageMoveForm.setAttribute("action", "/article/list");
+			pageMoveForm.submit();
+		});
+	};
+
 	const detailLinks = document.querySelectorAll(".detail-links");
 	detailLinks.forEach(link => {
 		link.addEventListener("click", (e) => {
@@ -21,4 +33,11 @@ window.addEventListener("load", () => {
 	writeBtn.addEventListener("click", () => {
 		location.href = "/article/write";
 	});
+	
+	const strPageBtn = document.querySelector(".str-page-btn");
+	strPageBtn.addEventListener("click",()=>{
+		location.href="/article/list";
+	});
+	
+	
 })

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nana.port.dto.Criteria;
 import com.nana.port.mapper.ArticleMapper;
 import com.nana.port.payload.Article;
 import com.nana.port.payload.User;
@@ -14,8 +15,8 @@ public class ArticleService {
 	ArticleMapper articleMapper;
 	
 	// 리스트
-	public List<Article> getList() {
-		return articleMapper.getList();
+	public List<Article> getList(Criteria cri) {
+		return articleMapper.getList(cri);
 	}
 	// 게시글 상세보기	
 	public Article getArticle(int id) {
@@ -41,5 +42,9 @@ public class ArticleService {
 	// 조회수 증가
 	public void increseHit(int id) {
 		articleMapper.increseHit(id);
+	}
+	// 게시글 전체 갯수
+	public int getTotal(Criteria cri) {
+		return articleMapper.getTotal(cri);
 	}
 }

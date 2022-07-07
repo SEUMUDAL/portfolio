@@ -26,10 +26,25 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<div class="d-flex justify-content-space-between">
-		<button class="btn first-list-btn">목록</button>
-		<button class="btn write-btn">글쓰기</button>
-	</div>
+	<nav class="page-menu">
+		<div class="d-flex justify-content-space-between">
+			<button class="btn str-page-btn">목록</button>
+			<button class="btn write-btn">글쓰기</button>
+		</div>
+		<ul class="d-flex justify-content-center page-list">
+			<c:if test="${page.prev}">
+				<li class="page-btn"><a href="${page.strPage-1}">Prev</a></li>
+			</c:if>
+			<c:forEach begin="${page.strPage}" end="${page.lstPage}" var="num">
+				<li class="page-btn ${page.cri.pageNum == num ? 'active' : '' }"><a href="${num}">${num}</a></li>
+			</c:forEach>
+			<c:if test="${page.next}">
+				<li class="page-btn"><a href="${page.lstPage+1}">Next</a></li>
+			</c:if>
+		</ul>
+	</nav>
 	<form action="/article/list" method="get" id="pagemove-form">
+		<input type="hidden" name="pageNum" value="${page.cri.pageNum}" />
+		<input type="hidden" name="amount" value="${page.cri.amount}" />
 	</form>
 </section>
