@@ -1,16 +1,18 @@
 // article/detial
 
 window.addEventListener("load", () => {
+	const pageMoveForm = document.getElementById("pagemove-form");
 	const pageMoveBtns = document.querySelectorAll("[data-page-move]");
 	const id = document.querySelector("#id");
 
 	pageMoveBtns.forEach(btn => {
 		btn.addEventListener("click", () => {
 			if (btn.dataset.pageMove == 'modify') {
-				location.href = `/article/modify/${id.value}`;
+				pageMoveForm.setAttribute("action", `/article/modify/${id.value}`);
+				pageMoveForm.submit();
 			}
 			else if (btn.dataset.pageMove == 'list') {
-				location.href = "/article/list";
+				pageMoveForm.submit();
 			}
 			else if (btn.dataset.pageMove == "delete") {
 				if (confirm("정말 삭제하시겠습니까?") == false) {
@@ -24,7 +26,7 @@ window.addEventListener("load", () => {
 					.then(data => {
 						if (data.status === "OK") {
 							alert("삭제가 완료되었습니다.");
-							location.href = "/article/list";
+							pageMoveForm.submit();
 						}
 					}).catch(error => console.error("ERROR" + error))
 			}

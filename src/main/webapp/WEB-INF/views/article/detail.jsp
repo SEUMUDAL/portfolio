@@ -29,5 +29,9 @@
 			<button class="btn" data-page-move="delete">삭제</button>
 		</c:if>
 	</div>
+	<form action="./list" method="get" id="pagemove-form">
+		<input type="hidden" name="pageNum" value="${cri.pageNum}" />
+		<input type="hidden" name="amount" value="${cri.amount}" />
+	</form>
 </section>
 
