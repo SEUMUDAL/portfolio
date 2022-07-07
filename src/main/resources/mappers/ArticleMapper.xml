@@ -39,6 +39,12 @@
 		delete from article
 		where id = #{id}
 	</delete>
+	
+	<update id="increseHit">
+		update article
+		set hit = hit + 1
+		WHERE id = #{id}
+	</update>
 
 	<resultMap type="Article" id="article">
 		<id property="id" column="id" />

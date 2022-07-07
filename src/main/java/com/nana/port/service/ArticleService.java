@@ -38,4 +38,8 @@ public class ArticleService {
 	public int delete(int id) {
 		return articleMapper.delete(id);
 	}
+	// 조회수 증가
+	public void increseHit(int id) {
+		articleMapper.increseHit(id);
+	}
 }

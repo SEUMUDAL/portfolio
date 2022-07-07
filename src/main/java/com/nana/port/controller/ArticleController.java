@@ -34,6 +34,7 @@ public class ArticleController {
 	public ModelAndView detail(@RequestParam int id) {
 		ModelAndView mv = new ModelAndView("article.detail");
 		mv.addObject("article", articleService.getArticle(id));
+		articleService.increseHit(id);
 		return mv;
 	}
 	/* 게시글 작성폼 */

@@ -21,6 +21,9 @@ public interface ArticleMapper {
 
 	// 게시글 삭제하기	
 	int delete(int id);
+	
+	// 게시글 조회수 증가
+	void increseHit(int id);
 
 	
 
