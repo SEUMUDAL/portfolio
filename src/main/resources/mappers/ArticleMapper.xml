@@ -18,7 +18,7 @@
 		on A.userId = U.id
 		where A.id = #{id}
 	</select>
-	
+
 	<insert id="write" useGeneratedKeys="true" keyProperty="id">
 		insert
 		into article
@@ -26,14 +26,20 @@
 		values
 		(#{title},#{content},#{userId})
 	</insert>
-	
+
 	<update id="modify" parameterType="Article">
 		update article
-		set title = #{title},
+		set title =
+		#{title},
 		content = #{content}
 		where id = #{id}
 	</update>
-	
+
+	<delete id="delete">
+		delete from article
+		where id = #{id}
+	</delete>
+
 	<resultMap type="Article" id="article">
 		<id property="id" column="id" />
 		<id property="title" column="title" />

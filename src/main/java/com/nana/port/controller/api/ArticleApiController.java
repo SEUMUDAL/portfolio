@@ -3,6 +3,8 @@ package com.nana.port.controller.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +33,12 @@ public class ArticleApiController {
 	@PutMapping("/modify")
 	public ResponseDto<Integer> modify(@RequestBody Article article) {
 		int rs = articleService.modify(article);
+		return new ResponseDto<>(HttpStatus.OK,rs);
+	}
+	/* 글 삭제하기 */
+	@DeleteMapping("/del/{id}")
+	public ResponseDto<Integer> delete(@PathVariable int id) {
+		int rs =  articleService.delete(id);
 		return new ResponseDto<>(HttpStatus.OK,rs);
 	}
 }

@@ -19,6 +19,9 @@ public interface ArticleMapper {
 	// 게시글 수정하기
 	int modify(Article reqArticle);
 
+	// 게시글 삭제하기	
+	int delete(int id);
+
 	
 
 }

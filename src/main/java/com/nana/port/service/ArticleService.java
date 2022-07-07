@@ -34,4 +34,8 @@ public class ArticleService {
 		}
 		return articleMapper.modify(reqArticle); 
 	}
+	//게시글 삭제하기
+	public int delete(int id) {
+		return articleMapper.delete(id);
+	}
 }
