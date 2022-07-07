@@ -20,4 +20,4 @@ window.addEventListener("load", () => {
 			['insert', ['picture', 'link', 'video']]
 		]
 	});
-});
+},{ passsive : true });

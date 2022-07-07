@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<script type="text/javascript" src="/js/article/list.js"></script>
 <link rel="stylesheet" href="/css/article/list.css" />
-<script type="text/javascript" src="/js/article.js"></script>
 <section class="-info">
 	<table>
 		<thead>
@@ -18,7 +18,7 @@
 			<c:forEach items="${list}" var="article" begin="0" end="10">
 				<tr>
 					<td>${article.id}</td>
-					<td><a class="deta-links" href="${article.id}">${article.title}</a></td>
+					<td><a class="detail-links" href="${article.id}">${article.title}</a></td>
 					<td>${article.etc.writer}</td>
 					<td><fmt:formatDate value="${article.regDate}" pattern="yyyy-MM-dd" /></td>
 					<td>${article.hit}</td>

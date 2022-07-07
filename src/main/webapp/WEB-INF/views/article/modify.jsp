@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-<script src="/js/article/modify.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <script src="/js/article/summernote.js"></script>
+<script src="/js/article/modify.js"></script>
 <link rel="stylesheet" href="/css/article/modify.css" />
 <section class="-info">
 	<form>
@@ -13,7 +13,7 @@
 		</div>
 		<hr>
 		<div class="d-flex  justify-content-center write-box">
-			<textarea rows="10" cols="50" placeholder="내용을 입력해주세요" id="content" class="summernote">${article.content}</textarea>
+			<textarea rows="10" cols="50" placeholder="내용을 입력해주세요" class="summernote" id="content">${article.content}</textarea>
 		</div>
 		<div class="d-flex  justify-content-center write-box">
 			<button type="button" class="modify-btn btn">수정하기</button>

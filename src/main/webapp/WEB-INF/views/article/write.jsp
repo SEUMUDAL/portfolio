@@ -3,8 +3,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="/js/article/write.js"></script>
+<script src="/js/article/summernote.js"></script>
 <link rel="stylesheet" href="/css/article/write.css" />
-<script src="/js/article.js"></script>
 <section class="-info">
 	<form>
 		<div class="d-flex justify-content-center write-box">
