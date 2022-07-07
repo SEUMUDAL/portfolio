@@ -49,7 +49,7 @@ public class ArticleController {
 	}
 	/* 게시글 수정 */
 	@GetMapping("/modify/{id}")
-	public String modifyForm(@PathVariable int id,Model model) {
+	public String modifyForm(@PathVariable int id,Model model,@ModelAttribute("cri")Criteria cri) {
 		model.addAttribute("article", articleService.getArticle(id));
 		return "article.modify";
 	}

@@ -3,9 +3,11 @@
  */
 window.addEventListener("load", () => {
 	const listBtn = document.querySelector(".list-btn");
+	const pageNum = document.getElementById("pageNum").value;
+    const amount = document.getElementById("amount").value;
 	
 	listBtn.addEventListener("click",()=>{
-		location.href="/article/list";
+		location.href = `/article/list?pageNum=${pageNum}&amount=${amount}`;
 	})
 	const modifyBtn = document.querySelector(".modify-btn");
 	if (modifyBtn != null) {
@@ -42,7 +44,7 @@ window.addEventListener("load", () => {
 				.then((data) => {
 					if (data.status === "OK") {
 						alert("글 수정 완료");
-						location.href = `/article/detail?id=${id.value}`
+						location.href = `/article/detail?pageNum=${pageNum}&amount=${amount}&id=${id.value}`;
 					} else {
 						alert("글 수정 실패");
 					}

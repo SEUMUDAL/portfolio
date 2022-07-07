@@ -19,5 +19,9 @@
 			<button type="button" class="modify-btn btn">수정하기</button>
 			<button type="button" class="list-btn btn">목록</button>
 		</div>
+		<div>
+			<input type="hidden" id="pageNum" value="${cri.pageNum}" />
+			<input type="hidden" id="amount" value="${cri.amount}" />
+		</div>
 	</form>
 </section>
