@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nana.port.mapper.ReplyMapper">
+	<select id="getList" resultMap="reply">
+		select R.*,
+		U.nickname AS etc_writer
+		from reply AS R
+		inner join user AS U
+		on R.userId= U.id
+		where R.articleId = #{articleId}
+		order by R.id 
+	</select> 
+	<insert id="write">
+		insert into reply (content,articleId,userId)
+		values (#{content},#{articleId},#{userId})
+	</insert>
+	
+	<resultMap type="Reply" id="reply">
+		<id property="id" column="id" />
+		<id property="content" column="content" />
+		<id property="regDate" column="regDate" />
+		<id property="articleId" column="articleId" />
+		<id property="userId" column="userId" />
+		<association property="etc" javaType="Map">
+			<id property="writer" column="etc_writer" />
+		</association>
+	</resultMap> 
+</mapper>

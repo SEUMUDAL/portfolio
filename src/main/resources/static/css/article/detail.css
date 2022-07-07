@@ -54,26 +54,26 @@
 	margin-right: auto;
 }
 
-#comment-content {
+#reply-content {
 	width: 100%;
 	resize: none;
 	margin-bottom: 12px;
 }
 
-.comment-strong {
+.reply-strong {
 	display: inline-block;
 	padding: 13px 0;
 }
 
-.comment-list ul {
+.reply-list ul {
 	border-bottom: 1px solid #707070;
 }
 
-.comment-list li {
+.reply-list li {
 	padding: 5px 0;
 }
 
-.comment-list ul:nth-of-type(2n+1) {
+.reply-list ul:nth-of-type(2n+1) {
 	background: silver;
 }
 

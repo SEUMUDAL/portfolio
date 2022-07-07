@@ -33,5 +33,19 @@
 		<input type="hidden" name="pageNum" value="${cri.pageNum}" />
 		<input type="hidden" name="amount" value="${cri.amount}" />
 	</form>
+	<div>
+		<div class="d-flex">
+			<textarea rows="10" cols="30" id="reply-content"></textarea>
+		</div>
+		<div class="d-flex  justify-content-flex-end">
+			<button class="btn reply-write-btn">댓글 작성</button>
+		</div>
+	</div>
+	<div>
+		<strong>댓글</strong>
+		<hr />
+		<nav class="reply-list">
+		</nav>
+	</div>
 </section>
 
