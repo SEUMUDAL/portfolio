@@ -66,11 +66,13 @@
 }
 
 .reply-list ul {
-	border-bottom: 1px solid #707070;
+	/* border-bottom: 1px solid #707070; */
+/* 	padding: .2rem .7rem; */
+	box-sizing: border-box;
 }
-
-.reply-list li {
-	padding: 5px 0;
+.reply-delete-btn {
+	font-size: 12px;
+	padding: .3rem .4rem;
 }
 
 .reply-list ul:nth-of-type(2n+1) {
@@ -80,3 +82,4 @@
 .justify-content-space-between {
 	justify-content: space-between;
 }
+ 

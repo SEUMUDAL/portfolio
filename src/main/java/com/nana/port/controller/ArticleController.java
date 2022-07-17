@@ -15,7 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.nana.port.dto.Criteria;
 import com.nana.port.dto.Pages;
 import com.nana.port.payload.Article;
+import com.nana.port.payload.Reply;
 import com.nana.port.service.ArticleService;
+import com.nana.port.service.ReplyService;
 
 @Controller
 @RequestMapping("/article")
@@ -23,6 +25,9 @@ public class ArticleController {
 	
 	@Autowired
 	private ArticleService articleService;
+	
+	@Autowired
+	private ReplyService replyService;
 	/* 게시글 목록 */	
 	@GetMapping("/list")
 	public ModelAndView List(Criteria cri) {
@@ -39,6 +44,8 @@ public class ArticleController {
 	public ModelAndView detail(@RequestParam int id, @ModelAttribute("cri") Criteria cri) {
 		ModelAndView mv = new ModelAndView("article.detail");
 		mv.addObject("article", articleService.getArticle(id));
+		List<Reply> replys = replyService.getList(id);
+		mv.addObject("replys",replys);
 		articleService.increseHit(id);
 		return mv;
 	}

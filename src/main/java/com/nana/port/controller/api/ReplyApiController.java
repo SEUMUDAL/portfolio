@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,4 +38,17 @@ public class ReplyApiController {
 		int rs = replyService.write(articleId,reply,principal.getUser());
 		return new ResponseDto<>(HttpStatus.OK,rs);
 	}
+	/* 댓글 삭제하기 */
+	@DeleteMapping("/delete/{Id}")
+	public ResponseDto<Integer> delete(@PathVariable int id) {
+		int rs = replyService.delete(id);
+		return new ResponseDto<>(HttpStatus.OK,rs);
+	}
+	@GetMapping("/list2")
+	public List<Reply> list2() {
+		List<Reply> list = replyService.getList(74);
+		return list;
+	}
+	
+	
 }

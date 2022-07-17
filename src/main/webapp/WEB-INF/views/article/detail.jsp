@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<script src="/js/article/detail.js"></script>
+<script defer="defer" src="/js/article/detail.js"></script>
 <link rel="stylesheet" href="/css/article/detail.css" />
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
@@ -44,8 +44,8 @@
 	<div>
 		<strong>댓글</strong>
 		<hr />
-		<nav class="reply-list">
-		</nav>
+		<input type="hidden" value="${principal.user.nickname}" id="reply-editor" />
+		<nav class="reply-list"></nav>
 	</div>
 </section>
 

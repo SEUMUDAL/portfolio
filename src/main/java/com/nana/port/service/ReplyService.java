@@ -23,6 +23,10 @@ public class ReplyService {
 			reply.setUserId(user.getId());
 			return replyMapper.write(reply);
 	}
+	// 댓글 삭제하기
+	public int delete(int id) {
+		return replyMapper.delete(id);
+	}
 
 	
 

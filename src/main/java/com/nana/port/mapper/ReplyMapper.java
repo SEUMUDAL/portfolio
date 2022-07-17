@@ -15,4 +15,7 @@ public interface ReplyMapper {
 	// 댓글 작성하기
 	int write(Reply reply);
 
+	// 댓글 삭제하기	
+	int delete(int id);
+
 }
