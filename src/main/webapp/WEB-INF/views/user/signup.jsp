@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/user/signup.css" />
-<script type="text/javascript" src="/js/user.js"></script>
+<script type="text/javascript" src="/js/validate.js"></script>
+<script defer="defer" type="text/javascript" src="/js/signup.js"></script>
 <section class="signup-form-wrap">
 	<h3>회원가입</h3>
 	<form id="signup-form">
@@ -16,8 +17,8 @@
 		</div>
 		<div>
 			<label>비밀번호 재확인</label>
-			<input type="password" placeholder="비밀번호를 확인해주세요" id="confirm-password" autocomplete="off">
-			<span style="display: none;" id="confirm-passwordMsg"></span>
+			<input type="password" placeholder="비밀번호를 확인해주세요" id="match-password" autocomplete="off">
+			<span style="display: none;" id="match-passwordMsg"></span>
 		</div>
 		<div>
 			<label>닉네임</label>

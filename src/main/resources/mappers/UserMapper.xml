@@ -8,5 +8,13 @@
 	<select id="findByUsername" resultType="User"  parameterType="string">
 		select * from user
 		where username = #{username}
+	</select>
+	<select id="checkExistUser" resultType="int">
+		select count(*) from user
+		where username = #{username}
+	</select>
+	<select id="matchNickname" resultType="int">
+		select count(*) from user
+		where nickname = #{nickname}
 	</select> 
 </mapper>

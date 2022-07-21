@@ -36,7 +36,6 @@ refreshReplyList(id);
 
 const replyList = document.querySelector(".reply-list");
 
-
 function refreshReplyList(articleId) {
 	let replyEditor = document.querySelector("#reply-editor").value;
 	fetch(`/reply/list/${articleId}`, {
@@ -47,33 +46,40 @@ function refreshReplyList(articleId) {
 			replyList.innerHTML = '';
 			data.map(function(reply) {
 				const ul = document.createElement("ul");
+				const replyId = document.createElement("input");
+				replyId.setAttribute("type","text");
+				replyId.setAttribute("value",reply.id);
+				replyId.className="reply-id";
 				const firstLi = document.createElement("li");
 				const replyWriterSpan = document.createElement("span");
 				const replyDeleteBtn = document.createElement("button");
-				//firstLi.style.cssText='display:flex; justify-content:space-between;';
-				firstLi.classList.add("d-flex","justify-content-space-between")
+				firstLi.classList.add("d-flex", "justify-content-space-between")
 				firstLi.appendChild(replyWriterSpan);
 				const replyContentLi = document.createElement("li");
-				replyDeleteBtn.setAttribute("type","button");
+				replyDeleteBtn.setAttribute("type", "button");
+				replyDeleteBtn.setAttribute("data-reply",reply.id);
 				replyWriterSpan.innerHTML = reply.etc.writer;
 				replyContentLi.innerHTML = reply.content;
 				replyContentLi.style.borderBottom = "1px solid black";
 				if (reply.etc.writer === replyEditor) {
 					replyDeleteBtn.innerHTML = '삭제';
 					replyDeleteBtn.className = "reply-delete-btn";
-					replyDeleteBtn.addEventListener("click",deleteReply);
+					replyDeleteBtn.addEventListener("click", this.deleteReply);
 					firstLi.appendChild(replyDeleteBtn);
 				}
+				ul.append(replyId);
 				ul.append(firstLi);
-				ul.append(replyContentLi );
+				ul.append(replyContentLi);
 				replyList.append(ul);
 			})
-		}).catch(error => console.error(error))
+		}).catch(error => console.error(error));
 }
 
 function deleteReply() {
-	// none
+	//
 }
+
+
 // 댓글 작성하기
 const replyWriteBtn = document.querySelector(".reply-write-btn");
 replyWriteBtn.addEventListener("click", () => {

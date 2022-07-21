@@ -23,6 +23,16 @@ public class UserService {
 		user.setRole("USER");
 		return userMapper.signup(user);
 	}
+	
+	// 존재하는 아이디인지 체크한다.
+	public int checkExistUser(String username) {
+		return userMapper.checkExistUser(username);
+	}
+	
+	// 존제하는 닉네임인지 체크
+	public int matchNickname(String nickname) {
+		return userMapper.matchNickname(nickname);
+	}
 
 
 }

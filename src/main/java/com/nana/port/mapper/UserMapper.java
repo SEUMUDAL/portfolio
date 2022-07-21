@@ -10,4 +10,8 @@ public interface UserMapper {
 
 	User findByUsername(String username);
 
+	int checkExistUser(String username);
+
+	int matchNickname(String nickname);
+
 }

@@ -16,7 +16,7 @@
 	</insert>
 	<delete id="delete">
 		delete from reply
-		where id = #{id}
+		where id =#{id}
 	</delete>
 	
 	<resultMap type="Reply" id="reply">

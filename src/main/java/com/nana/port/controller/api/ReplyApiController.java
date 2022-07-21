@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +23,6 @@ public class ReplyApiController {
 	@Autowired
 	ReplyService replyService;
 	
-	/* 댓글목록보기 */
 	/* 댓글목록보기 */
 	@PostMapping("/list/{articleId}")
 	public List<Reply> replyList(@PathVariable int articleId) {
@@ -44,11 +42,5 @@ public class ReplyApiController {
 		int rs = replyService.delete(id);
 		return new ResponseDto<>(HttpStatus.OK,rs);
 	}
-	@GetMapping("/list2")
-	public List<Reply> list2() {
-		List<Reply> list = replyService.getList(74);
-		return list;
-	}
-	
 	
 }
